@@ -6,69 +6,92 @@ Home Page NITK Connect
 <link rel = "stylesheet" href = "bootstrap.css"> </link>
 <link rel = "stylesheet" href = "bootstrap-theme.css"> </link>
 <link rel = "stylesheet" href = "styletab.css"> </link>
+<link rel = "stylesheet" href = "bootstrap.min.css">
+<script src = "jquery.min.js"></script>
+<script src = "bootstrap.min.js"></script>
+<script src = "angular.min.js"></script>	
 <body>
+
+
+
 <input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
    <label for="drawer-toggle" id="drawer-toggle-label"></label>
-   <header><center>Home
-    <div class="container">
+   <header>
+
+    	<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div>
+      <ul class="nav navbar-nav">
+        <li class=""><a align="center">Home</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
     <div class="row">
 		<div class="col-md-12">
 			
 			<div class="tabbable-panel">
 				<div class="tabbable-line">
-					<ul class="nav nav-tabs ">
+					<ul class="nav nav-pills ">
 						<li class="active">
-							<a href="#tab_default_1" data-toggle="tab">
-							News </a>
+							<a data-toggle="tab" href="#tab_default_1" >
+							<font size="5">News</font> </a>
 						</li>
 						<li>
-							<a href="#tab_default_2" data-toggle="tab">
-							Events </a>
+							<a data-toggle="tab" href="#tab_default_2" >
+							<font size="5">Events</font> </a>
 						</li>
-											</ul>
-					<div class="tab-content">
-						<div class="tab-pane active" id="tab_default_1">
-							 in Tab 1.
-							</p>
-							<p>
-								News Section
-							</p>
-							
+					</ul>
+					<div class="tab-content" ng-app="" ng-init="opts = [
+        					{value: 111, text: '1st', event: true },
+        					{value: 222, text: '2nd', event: false },
+    						{value: 333, text: '3rd', event: false }
+    						];">
+						<div  id="tab_default_1" class="tab-pane fade in active">
+							<div class="list-group" >
+						    	<a ng-repeat=" opt in opts" ng-if="opt.event==false" href="#" class="list-group-item ">
+						      		<h3 class="list-group-item-heading" >{{opt.text}}</h3>
+						      		<p class="list-group-item-text" ><font size="4">{{opt.value}}</font></p>
+						    	</a>
+							</div>
 						</div>
-						<div class="tab-pane active" id="tab_default_2">
+						<div  id="tab_default_2" class="tab-pane fade">
 							
-							<p>
-								Events Section
-							</p>
+							<div class="list-group" >
+						    	<a ng-repeat=" opt in opts" ng-if="opt.event==true" href="#" class="list-group-item ">
+						      		<h3 class="list-group-item-heading" >{{opt.text}}</h3>
+						      		<p class="list-group-item-text" ><font size="4">{{opt.value}}</font></p>
+						    	</a>
+							</div>
 							
 						</div>
 						
 					</div>
 				</div>
 			</div>
+		</div>
 
-			
-	
- </center></header>
+
+ </header>
 
    <nav id="drawer">
-      <dl>
-	<dd> <a href = "#"><b>Home </b></a> </dd>
-         <dd><a href="#"><b>Live News</b></a></dd>
-         <dd><a href="#">Student Council</a></dd>
-         <dd><a href="#">Technical Clubs</a></dd>
-         <dd><a href="#">Cultural Clubs</a></dd>
-	<dd><a href="#">special Interest Clubs</a></dd>
-	<dd><a href="#">Engineer</a></dd>
-	<dd><a href="#">Incident</a></dd>
-	<dd><a href="#">Talks and Seminar</a></dd>
-	<dd><a href="#">college Sports</a></dd>
-	<dd><a href="#">Miscellaneous</a></dd>
-	<dd><a href="#"><b>College Directory</b></a></dd>
-	<dd><a href="#"><b>Settings</b></a></dd>
-	<dd><a href="#"><b>About Us</b></a></dd>
-      </dl>
+    	<dl><font size="4">
+			<dd><a  href = "#"><b>Home </b></a> </dd>
+		    <dd><a href="#"><b>Live News</b></a></dd>
+		    <dd><a href="#">Student Council</a></dd>
+		    <dd><a href="#">Technical Clubs</a></dd>
+		    <dd><a href="#">Cultural Clubs</a></dd>
+			<dd><a href="#">special Interest Clubs</a></dd>
+			<dd><a href="#">Engineer</a></dd>
+			<dd><a href="#">Incident</a></dd>
+			<dd><a href="#">Talks and Seminar</a></dd>
+			<dd><a href="#">college Sports</a></dd>
+			<dd><a href="#">Miscellaneous</a></dd>
+			<dd><a href="#"><b>College Directory</b></a></dd>
+			<dd><a href="#"><b>Settings</b></a></dd>
+			<dd><a href="#"><b>About Us</b></a></dd>
+    	</font></dl>
    </nav>
- 
+
 </body>
 </html>
